@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>spiner</title>
+    <style>
+       @keyframes mymove {
+           0% {transform: rotate(360deg);}
+           100% {transform: rotate(0deg);}
+       }
+    </style>
+</head>
+<body class="bg">
+<center>
+    <img src="spinner-pink.jpg" height="350" onmousedown="spinon()" onmouseup="spinoff()"  id="basis">
+    <br>
+    <img src="spinner-pink.jpg" height="75"  id="pink" onclick="tap(this.id)">
+    <img src="fidget-spinner-black.jpg" id="black" height="60" onclick="tap(this.id)">
+    <img src="fidget_spinner_blue_jpg.jpg" id="blue" height="55" onclick="tap(this.id)">
+    <br>
+    <img src="ajy.jpg" height="80" id="ajy" onclick="tap1(this.id)">
+    <img src="background.jpg" id="bg" onclick="tap1(this.id)" height="80">
+</center>
+</body>
+<script>
+    function tap(clicked_id) {
+        document.getElementById('basis').src=document.getElementById(clicked_id).src
+    }
+    function tap1(clicked_id) {
+      document.body.style.background = "url(" + document.getElementById(clicked_id).src + ")"
+        document.body.style.backgroundRepeat = "no-repeat"
+        document.body.style.backgroundSize = "cover"
+    }
+    function spinoff() {
+                document.getElementById('basis').style.webkitAnimation =""
+
+    }
+    function spinon () {
+        document.getElementById('basis').style.webkitAnimation ="mymove 0.5s linear infinite normal"
+    }
+</script>
+</html>
